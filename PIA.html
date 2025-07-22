@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PIA Questionnaire and Risk Assessment Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fb;
+      padding: 20px;
+    }
+    h2 {
+      color: #003366;
+      margin-top: 40px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+    textarea, input, select {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .btn {
+      padding: 8px 12px;
+      background: #003366;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .btn:hover {
+      background: #0055aa;
+    }
+  </style>
+</head>
+<body>
+
+<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Philippine_Statistics_Authority.svg/1200px-Philippine_Statistics_Authority.svg.png" 
+       alt="Agency Logo" style="height: 80px;">
+
+  <div style="flex-grow: 1; text-align: center;">
+    <h1 style="margin: 0; font-size: 24px;">Privacy Impact Assessment</h1>
+    <p style="margin: 0;">Philippine Statistics Authority</p>
+  </div>
+
+  <img src="https://npo.gov.ph/wp-content/uploads/2023/07/Logo-Bagong-Pilipinas.png" 
+       alt="BagongPilipinas Logo" style="height: 80px;">
+</div>
+
+<p><strong>Submitted by:</strong> <input type="text"></p>
+<p><strong>Process (System/Manual):</strong> <input type="text"></p>
+<p><strong>Process Owner:</strong> <input type="text"></p>
+<p><strong>Date Conducted:</strong> <input type="date"></p>
+
+<h2>Personal Data Inventory</h2>
+<table id="dataInventory">
+  <thead>
+    <tr>
+      <th>Personal Data</th>
+      <th>Type (PI/SPI)</th>
+      <th>Collection</th>
+      <th>Use</th>
+      <th>Storage</th>
+      <th>Disclosure</th>
+      <th>Disposal</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<button class="btn" onclick="addInventoryRow()">+ Add Row</button>
+
+<h2>Privacy Impact Analysis</h2>
+<table id="impactAnalysis">
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>N/A</th>
+      <th>Remarks / Justification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <h3>Legitimate Purpose</h3>
+      <td>Is there a lawful basis for processing personal data?</td>
+      <td><input type="radio" name="q1" value="Yes"></td>
+      <td><input type="radio" name="q1" value="No"></td>
+      <td><input type="radio" name="q1" value="NA"></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>Is the processing compatible with a declared and specified purpose?</td>
+      <td><input type="radio" name="q2" value="Yes"></td>
+      <td><input type="radio" name="q2" value="No"></td>
+      <td><input type="radio" name="q2" value="NA"></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>Are all functionalities aligned to the purpose?</td>
+      <td><input type="radio" name="q3" value="Yes"></td>
+      <td><input type="radio" name="q3" value="No"></td>
+      <td><input type="radio" name="q3" value="NA"></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+  </tbody>
+
+  
+</table>
+<table>
+    <thead>
+    <tr>
+      <th>Question</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>N/A</th>
+      <th>Remarks / Justification</th>
+    </tr>
+  </thead>
+    <tbody>
+         <h3>Transparency</h3>
+      <td>Are the information provided prior to the collection? Please specify how in the remarks section.</td>
+      <td><input type="radio" name="q4" value="Yes"></td>
+      <td><input type="radio" name="q4" value="No"></td>
+      <td><input type="radio" name="q4" value="NA"></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>Does the privacy notice remain accessible any time a data subject wants to know more about the processing system? Please specify how in the remarks section.</td>
+      <td><input type="radio" name="q5" value="Yes"></td>
+      <td><input type="radio" name="q5" value="No"></td>
+      <td><input type="radio" name="q5" value="NA"></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+    <tr>
+      <th>Question</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>N/A</th>
+      <th>Remarks / Justification</th>
+    </tr>
+  </thead>
+    <tbody> 
+ <h3>Proportionality</h3>
+      <td>Is the processing of personal data adequate, relevant, and not excessive?</td>
+      <td><input type="radio" name="q4" value="Yes"></td>
+      <td><input type="radio" name="q4" value="No"></td>
+      <td><input type="radio" name="q4" value="NA"></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>Has the necessity of each personal data been assessed?</td>
+      <td><input type="radio" name="q5" value="Yes"></td>
+      <td><input type="radio" name="q5" value="No"></td>
+      <td><input type="radio" name="q5" value="NA"></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>Is it possible to achieve the purpose by processing fewer personal data?</td>
+      <td><input type="radio" name="q6" value="Yes"></td>
+      <td><input type="radio" name="q6" value="No"></td>
+      <td><input type="radio" name="q6" value="NA"></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>Will the "need-to-know" principle be adopted when granting access?</td>
+      <td><input type="radio" name="q7" value="Yes"></td>
+      <td><input type="radio" name="q7" value="No"></td>
+      <td><input type="radio" name="q7" value="NA"></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>Does the processing use the least intrusive & most privacy-preserving method based on industry standards?</td>
+      <td><input type="radio" name="q7" value="Yes"></td>
+      <td><input type="radio" name="q7" value="No"></td>
+      <td><input type="radio" name="q7" value="NA"></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>Will the processing stop once the purpose is achieved?</td>
+      <td><input type="radio" name="q7" value="Yes"></td>
+      <td><input type="radio" name="q7" value="No"></td>
+      <td><input type="radio" name="q7" value="NA"></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+
+  </tbody>
+</table>
+<h2>Data Subject Rights</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Data Subject Right</th>
+      <th>Procedures to Exercise</th>
+      <th>Controls</th>
+      <th>Acceptable (Y/N)</th>
+      <th>Remarks / Justification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Right to be informed</td>
+      <td><textarea rows="2"></textarea></td>
+      <td><textarea rows="2"></textarea></td>
+      <td><select><option>Y</option><option>N</option></select></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>Right to access</td>
+      <td><textarea rows="2"></textarea></td>
+      <td><textarea rows="2"></textarea></td>
+      <td><select><option>Y</option><option>N</option></select></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>Right to object</td>
+      <td><textarea rows="2"></textarea></td>
+      <td><textarea rows="2"></textarea></td>
+      <td><select><option>Y</option><option>N</option></select></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>Right to erasure</td>
+      <td><textarea rows="2"></textarea></td>
+      <td><textarea rows="2"></textarea></td>
+      <td><select><option>Y</option><option>N</option></select></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>Right to damages</td>
+      <td><textarea rows="2"></textarea></td>
+      <td><textarea rows="2"></textarea></td>
+      <td><select><option>Y</option><option>N</option></select></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>Right to file a complaint</td>
+      <td><textarea rows="2"></textarea></td>
+      <td><textarea rows="2"></textarea></td>
+      <td><select><option>Y</option><option>N</option></select></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>Right to rectify</td>
+      <td><textarea rows="2"></textarea></td>
+      <td><textarea rows="2"></textarea></td>
+      <td><select><option>Y</option><option>N</option></select></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>Right to data portability</td>
+      <td><textarea rows="2"></textarea></td>
+      <td><textarea rows="2"></textarea></td>
+      <td><select><option>Y</option><option>N</option></select></td>
+      <td><textarea rows="2"></textarea></td>
+    </tr>
+  </tbody>
+</table>
+<h3>Risk Rating & Level</h3>
+<table id="riskTable">
+  <thead>
+    <tr>
+      <th>Vulnerability</th>
+      <th>Threat</th>
+      <th>Risk</th>
+      <th>Impact (1-4)</th>
+      <th>Probability (1-4)</th>
+      <th>Rating</th>
+      <th>Controls</th>
+      <th>Approved (Y/N)</th>
+      <th>Responsible</th>
+      <th>Completion Date</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<button class="btn" onclick="addRiskRow()">+ Add Risk Row</button>
+
+<script>
+  const threatOptions= ["Weak Passwords","Lack of Encryption","Lack of Multi-Factor Authentication (MFA)","Lack of Access Control", "Unpatched Systems", "Lack of Training", "Inadequate Encryption"];
+  const  vulnerabilityOptions= ["Unauthorized Access", "Phishing", "Malware", "Data Breach","Negligence","Man-in-the-Middle (MITM)","Internal Threats", "System Failure"];
+  const riskOptions = ["Loss of Confidentiality", "Loss of Integrity", "Loss of Availability"];
+
+  function addInventoryRow() {
+    const table = document.getElementById('dataInventory').getElementsByTagName('tbody')[0];
+    const row = table.insertRow();
+    const cells = 8;
+    for (let i = 0; i < cells; i++) {
+      const cell = row.insertCell();
+      if (i >= 2 && i <= 6) {
+        cell.innerHTML = '<select><option value="Y">Y</option><option value="N">N</option></select>';
+      } else {
+        cell.innerHTML = '<textarea rows="2"></textarea>';
+      }
+    }
+  }
+
+  function createSelect(options) {
+    const select = document.createElement('select');
+    options.forEach(opt => {
+      const option = document.createElement('option');
+      option.value = opt;
+      option.textContent = opt;
+      select.appendChild(option);
+    });
+    return select.outerHTML;
+  }
+
+  function addRiskRow() {
+    const table = document.getElementById('riskTable').getElementsByTagName('tbody')[0];
+    const row = table.insertRow();
+    const threatCell = row.insertCell();
+const vulnCell = row.insertCell();
+    vulnCell.innerHTML = createSelect([...vulnerabilityOptions, 'Others']);
+    const vulnSelect = vulnCell.querySelector('select');
+    vulnSelect.onchange = function () {
+      if (this.value === 'Others') {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = 'Specify vulnerability';
+        this.parentElement.appendChild(input);
+      } else {
+        const existing = this.parentElement.querySelector('input');
+        if (existing) existing.remove();
+      }
+    };
+
+    threatCell.innerHTML = createSelect([...threatOptions, 'Others']);
+    const threatSelect = threatCell.querySelector('select');
+    threatSelect.onchange = function () {
+      if (this.value === 'Others') {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = 'Specify threat';
+        this.parentElement.appendChild(input);
+      } else {
+        const existing = this.parentElement.querySelector('input');
+        if (existing) existing.remove();
+      }
+    };
+    
+    const riskCell = row.insertCell();
+    riskCell.innerHTML = createSelect([...riskOptions, 'Others']);
+    const riskSelect = riskCell.querySelector('select');
+    riskSelect.onchange = function () {
+      if (this.value === 'Others') {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = 'Specify risk';
+        this.parentElement.appendChild(input);
+      } else {
+        const existing = this.parentElement.querySelector('input');
+        if (existing) existing.remove();
+      }
+    };
+    
+    row.insertCell().innerHTML = '<input type="number" min="1" max="4" oninput="computeRisk(this)">';
+    row.insertCell().innerHTML = '<input type="number" min="1" max="4" oninput="computeRisk(this)">';
+const ratingCell = row.insertCell();
+ratingCell.innerHTML = `
+  <div style="display:flex; align-items:center; gap:6px;">
+    <input type="number" disabled style="width:60px;">
+    <span class="risk-label" style="font-weight:bold;"></span>
+  </div>`;
+
+    row.insertCell().innerHTML = '<textarea rows="2"></textarea>';
+    row.insertCell().innerHTML = '<textarea rows="2"></textarea>';
+    row.insertCell().innerHTML = '<textarea rows="2"></textarea>';
+    row.insertCell().innerHTML = '<input type="date">';
+  }
+
+  function computeRisk(input) {
+  const row = input.closest('tr');
+  const impactInput = row.cells[3].querySelector('input');
+  const probabilityInput = row.cells[4].querySelector('input');
+  const ratingInput = row.cells[5].querySelector('input');
+  const labelSpan = row.cells[5].querySelector('.risk-label');
+
+  const impact = parseInt(impactInput?.value || 0);
+  const probability = parseInt(probabilityInput?.value || 0);
+  const riskValue = impact * probability;
+
+  if (!isNaN(riskValue)) {
+    ratingInput.value = riskValue;
+
+    let color = '', label = '';
+    if (riskValue <= 4) {
+      color = '#a8d08d'; label = 'Low ✅';
+    } else if (riskValue <= 8) {
+      color = '#ffe699'; label = 'Medium ⚠️';
+    } else if (riskValue <= 12) {
+      color = '#f4b084'; label = 'High 🔶';
+    } else {
+      color = '#ff7c80'; label = 'Critical 🔴';
+    }
+
+    ratingInput.style.backgroundColor = color;
+    labelSpan.textContent = label;
+    labelSpan.style.color = color;
+  } else {
+    ratingInput.value = '';
+    ratingInput.style.backgroundColor = '';
+    labelSpan.textContent = '';
+  }
+}
+
+document.querySelectorAll('textarea').forEach(area => {
+  area.addEventListener('input', function () {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
+  });
+});
+
+</script>
+
+<h2>Signatories</h2>
+<table style="width:100%; margin-top: 30px;">
+  <tr>
+    <td><strong>Drafted By:</strong><br>
+      <textarea rows="2" placeholder="Name of Drafter" style="width:100%; resize: vertical;"></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Reviewed By:</strong><br>
+      <textarea rows="2" placeholder="Name of Reviewer" style="width:100%; resize: vertical;"></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Recommended By:</strong><br>
+      <textarea rows="2" placeholder="Name of Recommender" style="width:100%; resize: vertical;"></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Approved By:</strong><br>
+      <textarea rows="2" placeholder="Name of Approver" style="width:100%; resize: vertical;"></textarea>
+    </td>
+  </tr>
+</table>
+
+<button class="btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+</body>
+
+</html>
+
